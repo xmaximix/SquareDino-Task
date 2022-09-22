@@ -7,14 +7,14 @@ using UnityEngine.AI;
 [System.Serializable]
 public class PlayerMovePath : MonoBehaviour
 {
-    [HideInInspector] public bool moving;
+    [HideInInspector] public bool moving { get; private set; }
     [SerializeField] PathDrawer pathDrawer;
     private Waypoint[] waypoints;
     private int currentWaypoint;
     private NavMeshAgent navMeshAgent;
     private PlayerAnimations animations;
     private float minReachDistance = -1;
-    public bool start;
+    public bool start { get; private set; }
 
     private void Start()
     {
